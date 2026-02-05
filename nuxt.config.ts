@@ -5,11 +5,6 @@ export default defineNuxtConfig({
     '@nuxt/ui'
   ],
   ssr: false,
-  nitro: {
-    output: {
-      publicDir: 'docs' // 生成静态文件到 docs
-    }
-  },
   devtools: {
     enabled: true
   },
@@ -25,6 +20,11 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-01-15',
+  nitro: {
+    output: {
+      publicDir: 'docs' // 生成静态文件到 docs
+    }
+  },
 
   eslint: {
     config: {
