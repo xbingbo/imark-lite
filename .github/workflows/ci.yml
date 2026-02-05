@@ -1,43 +1,46 @@
-name: Deploy to GitHub Pages
+name: Deploy imark-lite to GitHub Pages
 
 on:
   push:
-    branches: [ master ] # 或 master
+    branches: [ master ] # 或 main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [22]
-
     steps:
+      # 1. 检出代码
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
+      # 2. 安装 Node
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node }}
-          cache: pnpm
+          node-version: 22
 
+      # 3. 安装 pnpm
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        run: npm install -g pnpm
 
+      # 4. 安装依赖
       - name: Install dependencies
         run: pnpm install
 
+      # 5. Lint
       - name: Lint
         run: pnpm run lint
 
+      # 6. Typecheck
       - name: Typecheck
         run: pnpm run typecheck
 
-      - name: Build Nuxt
+      # 7. 构建静态站点
+      - name: Generate static site
         run: pnpm run generate
 
+      # 8. 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs # 或 ./docs，看你配置
+          publish_dir: ./docs
