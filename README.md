@@ -1,60 +1,121 @@
-# Nuxt Starter Template
+# imark-lite
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+> 将 Markdown 转换为 **可直接粘贴到微信公众号编辑器的富文本**  
+> 一个为公众号创作者、技术写作者准备的轻量级排版工具
 
-Use this template to get started with [Nuxt UI](https://ui.nuxt.com) quickly.
+---
 
-- [Live demo](https://starter-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
+## 为什么会有 imark-lite？
 
-<a href="https://starter-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-    <img alt="Nuxt Starter Template" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-  </picture>
-</a>
+如果你写过公众号文章，大概率遇到过这些问题：
 
-> The starter template for Vue is on https://github.com/nuxt-ui-templates/starter-vue.
+- Markdown 写得很爽，但**公众号不支持直接粘贴 HTML**
+- 样式一复杂，**粘贴后全乱**
+- 在线 Markdown 编辑器很多，但**为公众号适配的很少**
 
-## Quick Start
+**imark-lite 做的只有一件事：**
 
-```bash [Terminal]
-npm create nuxt@latest -- -t github:nuxt-ui-templates/starter
+> 把 Markdown 转换成 **公众号编辑器真正能识别、能保留样式的富文本**
+
+你复制的不是 HTML 代码，而是 **可以直接粘贴使用的内容**。
+
+---
+
+## 核心特性（Lite 版）
+
+- [x] Markdown → 微信公众号可用富文本
+- [x] 一键复制，直接粘贴到公众号编辑器
+- [x] 适配公众号支持的格式子集
+- [x] 内置多种基础排版风格
+- [x] 前端纯实现，无需登录、无需后端
+
+---
+
+## 内置样式（Lite）
+
+当前 Lite 版提供以下基础风格：
+
+- **简约白**：干净克制，适合长文
+- **护眼黑**：夜间阅读友好
+- **技术蓝**：偏技术风格排版
+
+> 复杂布局类样式（Hero / Card / Alert）不包含在 Lite 版中
+
+---
+
+## 支持的 Markdown 特性
+
+### 已支持
+
+- 标题（H1–H6）
+- 有序 / 无序列表
+- 引用块
+- 表格
+- 图片
+- 代码块（基础样式）
+
+### 不支持（或刻意限制）
+
+- 任意 HTML 标签
+- 自定义复杂布局
+- JS / 内联脚本
+- 公众号编辑器不支持的样式
+
+> 这是为了确保 **复制后在公众号中表现稳定一致**
+
+---
+
+## 使用流程
+
+```text
+Markdown
+   ↓
+imark-lite 转换
+   ↓
+复制富文本
+   ↓
+粘贴到微信公众号编辑器
+无需插件、无需配置。
 ```
 
-## Deploy your own
+## 技术栈
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=starter&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fstarter&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fstarter-dark.png&demo-url=https%3A%2F%2Fstarter-template.nuxt.dev%2F&demo-title=Nuxt%20Starter%20Template&demo-description=A%20minimal%20template%20to%20get%20started%20with%20Nuxt%20UI.)
+- Nuxt 3
+- TypeScript
+- DaisyUI / Tailwind CSS
+- Clipboard API
 
-## Setup
+## 本地运行
 
-Make sure to install the dependencies:
-
-```bash
+```shell
 pnpm install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
 pnpm dev
 ```
 
-## Production
+或使用 npm / yarn 亦可。
 
-Build the application for production:
+## 关于 License
 
-```bash
-pnpm build
-```
+本项目基于**GNU Affero General Public License v3.0（AGPL-3.0）**开源。
 
-Locally preview production build:
+- 允许学习、修改、非商业使用 
+- 不允许闭源商用或直接用于 SaaS 服务
 
-```bash
-pnpm preview
-```
+如需商业使用或更高级能力，请联系作者。
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Pro 版本（未开源）
+
+imark 仍在持续开发中，Pro 版将提供：
+
+- 一键发布到微信公众号 
+- 更丰富的高级排版组件 
+- AI 排版与样式推荐 
+- Chrome 插件支持 
+- 私有化部署能力
+
+> Lite 是工具，Pro 是产品。
+
+## 反馈与交流
+
+- Issue / PR 欢迎
+- 如果这个项目对你有帮助，欢迎 Star 
