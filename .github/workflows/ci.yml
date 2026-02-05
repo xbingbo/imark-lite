@@ -38,8 +38,12 @@ jobs:
       - name: Generate static site
         run: pnpm run generate
 
-      # 8. 部署到 GitHub Pages
+      # 上传 artifact（替代 publish_dir）
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./docs
+
+      # 部署
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-        with:
-          publish_dir: ./docs
