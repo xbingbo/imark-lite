@@ -2,7 +2,7 @@ name: Deploy imark-lite to GitHub Pages
 
 on:
   push:
-    branches: [ main ]  # 你的默认分支
+    branches: [ master ]  # 你的默认分支
   workflow_dispatch:     # 可以手动触发
 
 permissions:
