@@ -21,11 +21,6 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-01-15',
-  nitro: {
-    output: {
-      publicDir: 'docs' // GitHub Pages 可直接读取
-    }
-  },
 
   eslint: {
     config: {
