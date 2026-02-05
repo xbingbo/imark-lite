@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/ui'
   ],
+  ssr: false,
 
   devtools: {
     enabled: true
@@ -14,10 +15,17 @@ export default defineNuxtConfig({
     fonts: false
   },
   routeRules: {
-    '/': {prerender: true}
+    '/': {
+      prerender: true
+    }
   },
 
   compatibilityDate: '2025-01-15',
+  nitro: {
+    output: {
+      publicDir: 'docs' // GitHub Pages 可直接读取
+    }
+  },
 
   eslint: {
     config: {
@@ -26,11 +34,5 @@ export default defineNuxtConfig({
         braceStyle: '1tbs'
       }
     }
-  },
-  nitro: {
-    output: {
-      publicDir: 'docs' // GitHub Pages 可直接读取
-    }
-  },
-  ssr: false
+  }
 })
