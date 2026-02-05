@@ -5,6 +5,9 @@ export default defineNuxtConfig({
     '@nuxt/ui'
   ],
   ssr: false,
+  app: {
+    baseURL: '/imark-lite/' // ⚠️ 这里必须和仓库名保持一致
+  },
   devtools: {
     enabled: true
   },
