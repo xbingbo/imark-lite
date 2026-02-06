@@ -1,4 +1,4 @@
-import {defineContentConfig, defineCollection, z} from '@nuxt/content'
+import { defineContentConfig, defineCollection, z, } from '@nuxt/content'
 
 export default defineContentConfig({
   collections: {
@@ -12,9 +12,9 @@ export default defineContentConfig({
           label: z.string(),
           icon: z.string(),
           to: z.string(),
-          target: z.string().optional()
-        })).optional()
-      })
-    })
-  }
-})
+          target: z.string().optional(),
+        },),).optional(),
+      },),
+    },),
+  },
+},)

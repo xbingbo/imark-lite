@@ -1,18 +1,18 @@
 <script setup>
 useHead({
   meta: [
-    {name: 'viewport', content: 'width=device-width, initial-scale=1'}
+    { name: 'viewport', content: 'width=device-width, initial-scale=1', },
   ],
   link: [
-    {rel: 'icon', href: '/favicon.ico'}
+    { rel: 'icon', href: '/favicon.svg', },
   ],
   htmlAttrs: {
-    lang: 'en'
-  }
-})
+    lang: 'en',
+  },
+},)
 
-const title = 'Nuxt Starter Template'
-const description = 'A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.'
+const title = 'imark'
+const description = '一个为公众号创作者、技术写作者准备的轻量级排版工具'
 
 useSeoMeta({
   title,
@@ -21,31 +21,51 @@ useSeoMeta({
   ogDescription: description,
   ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
   twitterImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
-  twitterCard: 'summary_large_image'
-})
+  twitterCard: 'summary_large_image',
+},)
 </script>
 
 <template>
   <UApp>
-    <UHeader :toggle="false">
-      <template #left>
-        <NuxtLink to="/">
-          <AppLogo class="w-auto h-6 shrink-0"/>
-        </NuxtLink>
-      </template>
-
+    <UHeader
+      :toggle="false"
+      title="IMark"
+      to="/"
+    >
       <template #right>
-        <UButton to="/edit" icon="i-lucide-circle-play" color="neutral" variant="ghost"/>
-        <UButton to="/docs" icon="i-lucide-circle-question-mark" color="neutral" variant="ghost"/>
-        <UColorModeButton/>
+        <UTooltip
+          :delay-duration="0"
+          arrow
+          text="开始创作"
+        >
+          <UButton
+            to="/edit"
+            icon="i-lucide-circle-play"
+            color="neutral"
+            variant="ghost"
+          />
+        </UTooltip>
+        <UTooltip
+          :delay-duration="0"
+          arrow
+          text="使用指南"
+        >
+          <UButton
+            to="/docs"
+            icon="i-lucide-circle-question-mark"
+            color="neutral"
+            variant="ghost"
+          />
+        </UTooltip>
+        <UColorModeButton />
       </template>
     </UHeader>
 
     <UMain>
-      <NuxtPage/>
+      <NuxtPage />
     </UMain>
 
-    <USeparator/>
+    <USeparator />
 
     <UFooter>
       <template #left>

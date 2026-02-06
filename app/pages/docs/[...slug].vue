@@ -1,23 +1,23 @@
 <script lang="ts" setup>
-import type {ContentNavigationItem} from "@nuxt/content";
+import type { ContentNavigationItem, } from '@nuxt/content'
 
 const route = useRoute()
 
-const {data: page} = await useAsyncData(
+const { data: page, } = await useAsyncData(
   () => `content-${route.path}`,
-  () => queryCollection('content').path(route.path).first(),
+  () => queryCollection('content',).path(route.path,).first(),
 )
 if (!page.value) {
-  throw createError({statusCode: 404, statusMessage: 'Page not found', fatal: true})
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true, },)
 }
 
-const {data: navigation} = await useAsyncData(() => 'navigation', () => queryCollectionNavigation('content'), {
-  transform: (data: ContentNavigationItem[]) => {
-    console.log(data)
-    const rootResult = data.find(item => item.path === '/docs')?.children || data || []
+const { data: navigation, } = await useAsyncData(() => 'navigation', () => queryCollectionNavigation('content',), {
+  transform: (data: ContentNavigationItem[],) => {
+    console.log(data,)
+    const rootResult = data.find(item => item.path === '/docs',)?.children || data || []
     return rootResult
   },
-})
+},)
 </script>
 
 <template>
@@ -25,17 +25,26 @@ const {data: navigation} = await useAsyncData(() => 'navigation', () => queryCol
     <UPage v-if="page">
       <template #left>
         <UPageAside>
-          <UContentNavigation :navigation="navigation"/>
+          <UContentNavigation :navigation="navigation" />
         </UPageAside>
       </template>
 
-      <UPageHeader :title="page.title" :description="page.description"/>
+      <UPageHeader
+        :title="page.title"
+        :description="page.description"
+      />
       <UPageBody>
-        <ContentRenderer v-if="page" :value="page"/>
+        <ContentRenderer
+          v-if="page"
+          :value="page"
+        />
       </UPageBody>
 
-      <template v-if="page?.body?.toc?.links?.length" #right>
-        <UContentToc :links="page.body.toc.links"/>
+      <template
+        v-if="page?.body?.toc?.links?.length"
+        #right
+      >
+        <UContentToc :links="page.body.toc.links" />
       </template>
     </UPage>
   </UContainer>
