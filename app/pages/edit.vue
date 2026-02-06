@@ -8,7 +8,7 @@ const items = ref<RadioGroupItem[]>([
   {
     label: '简约白',
     value: 'white',
-    description: '留白克制阅读轻松',
+    description: '简约留白阅读轻松',
   },
   {
     label: '护眼黑',
