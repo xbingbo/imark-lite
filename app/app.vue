@@ -70,13 +70,13 @@ useSeoMeta({
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          Built by Ibingbo • © {{ new Date().getFullYear() }}
+          Built by ibingbo • © {{ new Date().getFullYear() }}
         </p>
       </template>
 
       <template #right>
         <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
+          to="https://github.com/ebingbo/imark-lite"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"
