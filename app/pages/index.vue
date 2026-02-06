@@ -29,28 +29,6 @@
       />
     </UPageHero>
 
-    <!-- How it works -->
-    <UPageSection
-      title="三步完成公众号排版"
-      :features="[
-        {
-          icon: 'i-lucide-edit-3',
-          title: '使用 Markdown 写作',
-          description: '用你熟悉的 Markdown 专注写内容，不需要额外学习排版规则。',
-        },
-        {
-          icon: 'i-lucide-eye',
-          title: '实时预览排版效果',
-          description: '所见即所得，提前看到适合公众号阅读的排版样式。',
-        },
-        {
-          icon: 'i-lucide-copy',
-          title: '一键复制发布',
-          description: '直接复制排版后的内容，粘贴到公众号后台即可发布。',
-        },
-      ]"
-    />
-
     <!-- Why -->
     <UPageSection
       title="为什么选择 imark"
@@ -74,6 +52,21 @@
           icon: 'i-lucide-code',
           title: '完全开源',
           description: '开源透明，可自行部署、二次开发，长期可用无平台依赖。',
+        },
+        {
+          icon: 'i-lucide-edit-3',
+          title: '使用 Markdown 写作',
+          description: '用你熟悉的 Markdown 专注写内容，不需要额外学习排版规则。',
+        },
+        {
+          icon: 'i-lucide-eye',
+          title: '实时预览排版效果',
+          description: '所见即所得，提前看到适合公众号阅读的排版样式。',
+        },
+        {
+          icon: 'i-lucide-copy',
+          title: '一键复制发布',
+          description: '直接复制排版后的内容，粘贴到公众号后台即可发布。',
         },
       ]"
     />
