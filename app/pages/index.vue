@@ -3,7 +3,7 @@
     <!-- Hero -->
     <UPageHero
       orientation="horizontal"
-      title="imark-lite"
+      title="imark"
       description="一个为公众号创作者和技术写作者准备的轻量级 Markdown 排版工具。专注内容本身，把排版交给它。"
       :links="[
         {
@@ -53,7 +53,7 @@
 
     <!-- Why -->
     <UPageSection
-      title="为什么选择 imark-lite"
+      title="为什么选择 imark"
       :features="[
         {
           icon: 'i-lucide-feather',
@@ -99,11 +99,6 @@
 <script lang="ts" setup>
 import { CalendarDate, } from '@internationalized/date'
 
-const code = '```markdown\n'
-  + '        # Hello imark-lite\n'
-  + '        - 复制富文本\n'
-  + '        - 直接发布到公众号\n'
-  + '        ```'
 const date = new Date()
 const value = shallowRef(new CalendarDate(date.getFullYear(), date.getMonth() + 1, date.getDate(),),)
 </script>
