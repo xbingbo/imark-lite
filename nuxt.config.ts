@@ -2,14 +2,12 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@nuxt/content'
   ],
   ssr: false,
   devtools: {
     enabled: true
-  },
-  app: {
-    baseURL: '/imark-lite/' // ⚠️ 这里必须和仓库名保持一致
   },
 
   css: ['~/assets/css/main.css'],
