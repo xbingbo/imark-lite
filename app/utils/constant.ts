@@ -1,6 +1,7 @@
 export const defaultContent: string = `
 # 欢迎使用微信公众号编辑器
-这是**图片**,请*注意*看~清楚~了
+
+请在*这里*输出**markdown**来尝试~创作~！！！
 
 ![](https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80)
 

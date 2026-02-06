@@ -17,7 +17,7 @@ const items = ref<RadioGroupItem[]>([
   },
 ],)
 const context = useContextStore()
-
+const toast = useToast()
 const doCopy = async () => {
   const htmlContent = IMark.parse(context.markdown,)
   const div = document.createElement('div',)
@@ -27,6 +27,11 @@ const doCopy = async () => {
     'text/plain': new Blob([div.innerText,], { type: 'text/plain', },),
   },)
   await navigator.clipboard.write([clipboardItem,],)
+  toast.add({
+    title: '复制成功',
+    description: '现在可以直接粘贴到公众号编辑器里发布了',
+    icon: 'i-lucide-circle-check-big',
+  },)
 }
 const preview = ref<HTMLIFrameElement | null>(null,)
 const htmlContent = computed(() => {

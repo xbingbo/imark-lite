@@ -4,6 +4,6 @@ import type { ItemStyle, } from '~/models/style.type'
 export const useContextStore = defineStore('context', {
   state: () => ({
     markdown: '',
-    style: 'white' as ItemStyle,
+    style: 'note' as ItemStyle,
   }),
 },)
