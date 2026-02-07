@@ -12,6 +12,37 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css',],
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          langs: [
+            'c',
+            'cpp',
+            'java',
+            'json',
+            'js',
+            'ts',
+            'html',
+            'css',
+            'vue',
+            'shell',
+            'mdc',
+            'md',
+            'yaml',
+            'java',
+            'go',
+            'python',
+            'sql',
+            'php',
+            'dockerfile',
+            'toml',
+            'ini',
+          ],
+        },
+      },
+    },
+  },
   ui: {
     fonts: false,
   },

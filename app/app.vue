@@ -32,6 +32,11 @@ useSeoMeta({
       title="IMark"
       to="/"
     >
+      <template #left>
+        <NuxtLink to="/">
+          <AppLogo />
+        </NuxtLink>
+      </template>
       <template #right>
         <UTooltip
           :delay-duration="0"

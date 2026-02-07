@@ -38,7 +38,6 @@ const htmlContent = computed(() => {
   return IMark.parse(context.markdown,)
 },)
 watch(htmlContent, (value,) => {
-  console.log(value,)
   if (!preview.value) {
     return
   }
@@ -103,36 +102,125 @@ onMounted(() => {
         </UButton>
       </div>
     </UPageHeader>
-    <UPageBody class="flex flex-row gap-4 my-4 py-0 space-y-0">
-      <UTextarea
-        v-model="context.markdown"
-        :maxrows="30"
-        :rows="30"
-        autoresize
-        color="neutral"
-        variant="subtle"
-        placeholder="Type something..."
-        class="w-full"
-      />
-      <UPageCard
-        variant="subtle"
-        highlight
-        highlight-color="neutral"
-        spotlight
-        spotlight-color="primary"
-        class="w-full"
-      >
-        <iframe
-          ref="preview"
-          class="w-full h-full mx-auto"
-          sandbox="allow-same-origin allow-scripts allow-presentation"
-          srcdoc="<html><body>在这里进行预览</body></html>"
+    <UPageBody class="my-4 flex flex-col gap-6 space-y-0 py-0 lg:flex-row">
+      <UCard class="editor-card w-full border-slate-200">
+        <div class="mb-3 flex items-center justify-between">
+          <div>
+            <div class="text-sm font-semibold text-slate-900">
+              Markdown 编辑器
+            </div>
+            <div class="text-xs text-slate-500">
+              支持常用语法，粘贴你的内容即可开始排版
+            </div>
+          </div>
+          <UBadge
+            color="primary"
+            variant="subtle"
+          >
+            实时同步
+          </UBadge>
+        </div>
+        <UTextarea
+          v-model="context.markdown"
+          :maxrows="57"
+          :rows="57"
+          autoresize
+          color="neutral"
+          variant="subtle"
+          placeholder="在这里输入 Markdown..."
+          class="editor-textarea w-full"
         />
-      </UPageCard>
+      </UCard>
+
+      <UCard class="preview-card w-full border-slate-200">
+        <div class="mb-3 flex items-center justify-between">
+          <div>
+            <div class="text-sm font-semibold text-slate-900">
+              公众号预览
+            </div>
+            <div class="text-xs text-slate-500">
+              模拟手机阅读比例，粘贴后更接近真实效果
+            </div>
+          </div>
+          <UBadge
+            color="primary"
+            variant="subtle"
+          >
+            手机视图
+          </UBadge>
+        </div>
+
+        <div class="preview-shell">
+          <div class="preview-device">
+            <div class="preview-notch" />
+            <div class="preview-screen">
+              <iframe
+                ref="preview"
+                class="preview-iframe"
+                sandbox="allow-same-origin allow-scripts allow-presentation"
+                srcdoc="<html><body>在这里进行预览</body></html>"
+              />
+            </div>
+          </div>
+        </div>
+      </UCard>
     </UPageBody>
   </UContainer>
 </template>
 
 <style scoped>
+.editor-card,
+.preview-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
 
+.editor-textarea :deep(textarea) {
+  min-height: 520px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.08);
+}
+
+.preview-shell {
+  display: flex;
+  justify-content: center;
+}
+
+.preview-device {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 19;
+  border-radius: 32px;
+  background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+  padding: 14px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.35);
+}
+
+.preview-notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 10px;
+  border-radius: 999px;
+  background: #0b1220;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  z-index: 2;
+}
+
+.preview-screen {
+  position: relative;
+  height: 100%;
+  border-radius: 24px;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
+}
+
+.preview-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 </style>
