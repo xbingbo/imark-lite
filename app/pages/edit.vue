@@ -107,7 +107,7 @@ onMounted(() => {
         <div class="mb-3 flex items-center justify-between">
           <div>
             <div class="text-sm font-semibold text-slate-900">
-              Markdown 编辑器
+              Markdown编辑
             </div>
             <div class="text-xs text-slate-500">
               支持常用语法，粘贴你的内容即可开始排版

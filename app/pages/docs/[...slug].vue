@@ -40,12 +40,12 @@ const { data: navigation, } = await useAsyncData(() => 'navigation', () => query
         />
       </UPageBody>
 
-      <template
-        v-if="page?.body?.toc?.links?.length"
-        #right
-      >
-        <UContentToc :links="page.body.toc.links" />
-      </template>
+      <!--      <template -->
+      <!--        v-if="page?.body?.toc?.links?.length" -->
+      <!--        #right -->
+      <!--      > -->
+      <!--        <UContentToc :links="page.body.toc.links" /> -->
+      <!--      </template> -->
     </UPage>
   </UContainer>
 </template>
