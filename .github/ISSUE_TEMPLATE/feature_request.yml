@@ -1,0 +1,30 @@
+name: 功能建议
+description: 提交一个功能改进建议
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: input
+    id: problem
+    attributes:
+      label: 问题背景
+      placeholder: 你想解决什么问题？
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 方案描述
+      placeholder: 请描述你期望的行为和使用流程。
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 替代方案
+      placeholder: 可选
+  - type: textarea
+    id: scope
+    attributes:
+      label: 影响范围
+      placeholder: 涉及页面/组件、兼容性、迁移成本等

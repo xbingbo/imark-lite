@@ -80,10 +80,24 @@ imark-lite 转换
 
 ## 技术栈
 
-- Nuxt 3
+- Nuxt 4
 - TypeScript
 - Tailwind CSS
 - Clipboard API
+
+## 质量保障
+
+当前项目在 CI 中默认执行以下检查：
+
+- `pnpm run lint`
+- `pnpm run typecheck`
+- `pnpm run generate`
+
+当前仓库未引入单元测试框架。提交 PR 前请至少完成：
+
+- 本地 `lint` 与 `typecheck` 通过
+- 编辑器输入与预览渲染手工验证
+- 复制结果在公众号编辑器中粘贴验证
 
 ## 本地运行
 
@@ -96,14 +110,14 @@ pnpm dev
 
 ## 关于 License
 
-本项目基于**GNU Affero General Public License v3.0（AGPL-3.0）**开源。
-
-- 允许学习、修改、非商业使用 
-- 不允许闭源商用或直接用于 SaaS 服务
-
-如需商业使用或更高级能力，请联系作者。
+本项目基于 **MIT License** 开源。  
+你可以在保留原版权与许可证声明的前提下，进行使用、修改、分发与商业使用。
 
 ## 反馈与交流
 
 - Issue / PR 欢迎
 - 如果这个项目对你有帮助，欢迎 Star 
+- 贡献指南：`CONTRIBUTING.md`
+- 行为准则：`CODE_OF_CONDUCT.md`
+- 安全策略：`SECURITY.md`
+- 仓库治理设置：`.github/REPOSITORY_SETTINGS.md`
