@@ -1,0 +1,12 @@
+.git
+.github
+.idea
+.nuxt
+.output
+node_modules
+docs
+
+.DS_Store
+npm-debug.log
+pnpm-debug.log
+yarn-error.log
