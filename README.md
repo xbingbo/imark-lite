@@ -108,6 +108,36 @@ pnpm dev
 
 或使用 npm / yarn 亦可。
 
+## Docker 部署
+
+项目已发布 Docker 镜像，支持 `linux/amd64` 与 `linux/arm64` 双架构。
+
+```shell
+docker run -d \
+  --name imark-lite \
+  -p 8080:80 \
+  ibingbo/imark-lite:latest
+```
+
+启动后访问：
+
+```text
+http://localhost:8080
+```
+
+也可以本地构建镜像：
+
+```shell
+docker build -t imark-lite .
+docker run --rm -p 8080:80 imark-lite
+```
+
+检查远程镜像架构：
+
+```shell
+docker buildx imagetools inspect ibingbo/imark-lite:latest
+```
+
 ## 关于 License
 
 本项目基于 **MIT License** 开源。  

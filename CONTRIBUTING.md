@@ -9,6 +9,26 @@
 2. 启动开发环境：
    - `pnpm dev`
 
+## Docker 镜像
+
+项目提供 Dockerfile，可用于本地构建静态站点镜像：
+
+```shell
+docker build -t imark-lite .
+docker run --rm -p 8080:80 imark-lite
+```
+
+官方镜像发布到 Docker Hub：
+
+```text
+ibingbo/imark-lite
+```
+
+GitHub Actions 会在推送到 `master` 或 `v*` 标签时构建并推送 `linux/amd64`、`linux/arm64` 双架构镜像。发布前需在仓库 Actions secrets 中配置：
+
+- `DOCKERHUB_USERNAME`
+- `DOCKERHUB_TOKEN`
+
 ## 分支与提交
 
 1. 从 `master` 创建功能分支。
